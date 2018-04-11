@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/climesoft.data/climesoft.data.iml" filepath="$PROJECT_DIR$/climesoft.data/climesoft.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/climesoft.main/climesoft.main.iml" filepath="$PROJECT_DIR$/climesoft.main/climesoft.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/climesoft.net/climesoft.net.iml" filepath="$PROJECT_DIR$/climesoft.net/climesoft.net.iml" />
+    </modules>
+  </component>
+</project>
