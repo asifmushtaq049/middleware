@@ -94,6 +94,10 @@ public abstract class ProtobufFormatter {
                                        e);
         }
 	}
+
+	public static void print(final Message message){
+
+	}
 	
 	/**
      * Like {@code print()}, but writes directly to a {@code String} and returns it.

@@ -6,7 +6,10 @@ module climesoft.data {
     requires java.xml.bind;
     requires jackson.core;
     requires com.fasterxml.jackson.dataformat.smile;
+    requires graphql.java;
+    requires json.flattener;
     exports climesoft.data.json;
     exports climesoft.data.xml;
     exports climesoft.data.protobuf;
+    exports climesoft.data.graphql;
 }
