@@ -20,7 +20,6 @@ public class Main extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("data/fxml_main.fxml"));
             Scene scene = new Scene(root);
-
             primaryStage.setTitle("Middleware Demo");
             primaryStage.setScene(scene);
             primaryStage.show();

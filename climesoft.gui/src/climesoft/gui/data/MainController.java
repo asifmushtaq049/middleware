@@ -8,7 +8,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 
 import climesoft.net.AsyncHttpClient;
 import climesoft.net.Response;

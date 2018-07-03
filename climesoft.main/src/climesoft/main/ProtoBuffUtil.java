@@ -18,9 +18,8 @@ public class ProtoBuffUtil {
 
         System.out.println(asXml);
     }
-    public void jsonToProto() throws InvalidProtocolBufferException {
+    public static void jsonToProto(String asJson) throws InvalidProtocolBufferException {
         Message.Builder builder  = PersonOuterClass.Person.newBuilder();
-        String asJson = "{\"name\": \"Asif\",\"id\": 2}";
         com.google.protobuf.util.JsonFormat.parser().merge(asJson, builder);
         Message person = builder.build();
         System.out.println(person.toString());
