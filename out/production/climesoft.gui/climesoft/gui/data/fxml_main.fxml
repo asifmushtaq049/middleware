@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity"
+            maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="866.0"
+            prefWidth="903.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="climesoft.gui.data.MainController">
+   <top>
+      <HBox prefHeight="58.0" prefWidth="854.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField prefHeight="57.0" prefWidth="657.0" fx:id="inputLink" />
+            <Button mnemonicParsing="false" prefHeight="57.0" prefWidth="235.0" text="Make Request" onAction="#getData" />
+         </children>
+      </HBox>
+   </top>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <center>
+      <VBox prefHeight="753.0" prefWidth="883.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="48.0" prefWidth="834.0">
+               <children>
+                  <RadioButton id="jsonToXML" mnemonicParsing="false" prefHeight="46.0" prefWidth="131.0" text="JSON TO XML">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="conversionType" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton id="jsonToGraph" mnemonicParsing="false" prefHeight="48.0" prefWidth="155.0" text="JSON TO GraphQL" toggleGroup="$conversionType" />
+                  <RadioButton id="xmlToJson" mnemonicParsing="false" prefHeight="48.0" prefWidth="132.0" text="XML TO JSON" toggleGroup="$conversionType" />
+                  <RadioButton id="xmlToGraph" mnemonicParsing="false" prefHeight="48.0" prefWidth="147.0" text="XML TO GraphQL" toggleGroup="$conversionType" />
+                  <RadioButton id="graphToJson" mnemonicParsing="false" prefHeight="48.0" prefWidth="152.0" text="GraphQL TO JSON" toggleGroup="$conversionType" />
+                  <RadioButton id="graphToXML" mnemonicParsing="false" prefHeight="48.0" prefWidth="147.0" text="GraphQL TO XML" toggleGroup="$conversionType" />
+               </children>
+            </HBox>
+            <TextArea prefHeight="306.0" prefWidth="883.0" fx:id="inputTextArea" />
+            <Label text="Output">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <TextArea prefHeight="380.0" prefWidth="883.0" fx:id="outputTextArea"/>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
