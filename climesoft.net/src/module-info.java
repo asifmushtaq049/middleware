@@ -6,6 +6,8 @@ module climesoft.net {
     requires java.security.jgss;
     requires org.reactivestreams;
     requires netty.reactive.streams;
+    requires com.github.benmanes.caffeine;
     exports climesoft.net;
     exports climesoft.net.ws;
+    exports climesoft.net.cache;
 }

@@ -7,5 +7,4 @@ module climesoft.main {
     requires io.netty.all;
     requires graphql.java;
     requires protobuf.java.util;
-    exports climesoft.main;
 }

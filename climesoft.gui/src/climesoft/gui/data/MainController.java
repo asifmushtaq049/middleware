@@ -4,6 +4,7 @@ import climesoft.data.graphql.GraphQLFactory;
 import climesoft.data.json.JSONException;
 import climesoft.data.json.JSONObject;
 import climesoft.data.xml.XML;
+import climesoft.net.cache.BuildCache;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import climesoft.net.Response;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 import static climesoft.net.Dsl.asyncHttpClient;
 
@@ -26,6 +28,8 @@ public class MainController {
     private TextArea outputTextArea;
     @FXML
     private TextField inputLink;
+
+    private String url;
 
     public MainController(){
 
@@ -115,8 +119,18 @@ public class MainController {
             try {
                 Response r = f.get();
                 inputTextArea.setText(r.getResponseBody());
+                BuildCache.putToCache(inputLink.getText(), r.getResponseBody());
+                url = inputLink.getText();
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
+            }
+        }else{
+            if(url!=null){
+                try {
+                    BuildCache.readFromCache(url);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -129,5 +143,6 @@ public class MainController {
         static final String Graph_TO_JSON = "graphToJson";
         static final String Graph_TO_XML = "graphToXML";
     }
+
 
 }

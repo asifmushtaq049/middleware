@@ -6,7 +6,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 
 public class ProtoBuffUtil {
-    public void Test(){
+    public static void test(){
         PersonOuterClass.Person person = PersonOuterClass.Person.newBuilder().setName("Asif").setId(2).build();
         JsonFormat jsonFormat = new JsonFormat();
         String asJson = jsonFormat.printToString(person);

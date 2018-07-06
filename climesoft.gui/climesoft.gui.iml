@@ -7,7 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="climesoft.data" />
-    <orderEntry type="module" module-name="climesoft.net" />
+    <orderEntry type="module" module-name="climesoft.data" exported="" />
+    <orderEntry type="module" module-name="climesoft.net" exported="" />
+    <orderEntry type="module" module-name="climesoft.main" />
   </component>
 </module>
