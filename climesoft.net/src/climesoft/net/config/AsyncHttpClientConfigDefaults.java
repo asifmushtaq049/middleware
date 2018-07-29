@@ -128,6 +128,7 @@ public final class AsyncHttpClientConfigDefaults {
   }
 
   public static int defaultMaxRedirects() {
+//      return 100;
     return AsyncHttpClientConfigHelper.getAsyncHttpClientConfig().getInt(ASYNC_CLIENT_CONFIG_ROOT + MAX_REDIRECTS_CONFIG);
   }
 

@@ -6,6 +6,7 @@ module climesoft.gui {
     opens climesoft.gui;
     requires climesoft.data;
     requires climesoft.net;
+    requires com.github.benmanes.caffeine;
     exports climesoft.gui.data;
     opens climesoft.gui.data;
 }

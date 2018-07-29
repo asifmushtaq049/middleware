@@ -5,6 +5,9 @@ import climesoft.data.json.JSONException;
 import climesoft.data.json.JSONObject;
 import climesoft.data.xml.XML;
 import climesoft.net.cache.BuildCache;
+import climesoft.net.cache.DataObject;
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,7 +32,8 @@ public class MainController {
     @FXML
     private TextField inputLink;
 
-    private String url;
+    String key = "data";
+
 
     public MainController(){
 
@@ -118,18 +122,18 @@ public class MainController {
             Future<Response> f = c.prepareGet(inputLink.getText().trim()).execute();
             try {
                 Response r = f.get();
-                inputTextArea.setText(r.getResponseBody());
-                BuildCache.putToCache(inputLink.getText(), r.getResponseBody());
-                url = inputLink.getText();
+                String output = r.getResponseBody();
+                inputTextArea.setText(output);
+                BuildCache.putToCache(key, output);
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
         }else{
-            if(url!=null){
+            if(inputLink.getText().isEmpty()){
                 try {
-                    BuildCache.readFromCache(url);
+                    inputTextArea.setText(BuildCache.readFromCache(key));
                 } catch (Exception e) {
-                    e.printStackTrace();
+//                    inputTextArea.setText("{\"status\":\"empty\"");
                 }
             }
         }

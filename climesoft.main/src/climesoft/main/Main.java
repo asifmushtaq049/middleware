@@ -41,6 +41,7 @@ public class Main {
 
 
 //        AsyncHttpClient c = asyncHttpClient();
+//        c.prepareGet("127.0.0.1").execute();
 //        try {
 //            WebSocket websocket = c.prepareGet("ws://localhost/test.php")
 //                    .execute(new WebSocketUpgradeHandler.Builder().addWebSocketListener(
